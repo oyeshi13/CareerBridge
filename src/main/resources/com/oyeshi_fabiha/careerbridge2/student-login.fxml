@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" prefHeight="400.0" prefWidth="400.0"
+      style="-fx-background-color: #ffffff; -fx-border-color: #2ecc71; -fx-border-width: 2;"
+      xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.oyeshi_fabiha.careerbridge2.StudentLoginController">
+    <Text text="Student Portal" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-fill: #2c3e50;"/>
+
+    <VBox spacing="10" maxWidth="250">
+        <Label text="Student ID / Email"/>
+        <TextField fx:id="studentIdField" promptText="Enter Student ID"/>
+
+        <Label text="Password"/>
+        <PasswordField fx:id="passwordField" promptText="Enter Password"/>
+
+        <Button text="Login" onAction="#handleStudentLogin" prefWidth="Infinity"
+                style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;">
+            <VBox.margin>
+                <Insets top="10"/>
+            </VBox.margin>
+        </Button>
+
+        <Hyperlink text="New here? Register now" style="-fx-alignment: CENTER;"/>
+    </VBox>
+</VBox>
