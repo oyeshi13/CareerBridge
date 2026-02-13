@@ -25,6 +25,6 @@
             </VBox.margin>
         </Button>
 
-        <Hyperlink text="New here? Register now" style="-fx-alignment: CENTER;"/>
+        <Hyperlink text="New here? Register now" style="-fx-alignment: CENTER;" onAction="#handleNewRegister"/>
     </VBox>
 </VBox>

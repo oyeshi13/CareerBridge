@@ -23,7 +23,6 @@ public class HelloController {
         }
     }
 
-    // A reusable method to close the current window and open a new one
     private void openNewWindow(String fxmlFile, String title) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
@@ -32,8 +31,7 @@ public class HelloController {
             newStage.setTitle(title + " - CareerBridge");
             newStage.setScene(scene);
 
-            // --- NEW LINE TO FIX YOUR PROBLEM ---
-            // This ensures that when the user clicks 'X' on this window, the whole app stops.
+
             newStage.setOnCloseRequest(e -> {
                 javafx.application.Platform.exit();
                 System.exit(0);
@@ -48,6 +46,4 @@ public class HelloController {
         }
     }
 
-    public void onHelloButtonClick(ActionEvent actionEvent) {
-    }
 }
