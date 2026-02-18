@@ -6,16 +6,16 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Text?>
 
-<HBox prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #F4F7FB;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<HBox prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #F4F7FB;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oyeshi_fabiha.careerbridge2.mentorController">
     <children>
-        <VBox prefWidth="240.0" style="-fx-background-color: #2C3E50;" spacing="15.0">
+        <VBox prefWidth="240.0" style="-fx-background-color: #2C3E50;" spacing="15.0" >
             <children>
                 <Label text="CareerBridge" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;">
                     <VBox.margin><Insets bottom="30.0" left="20.0" top="30.0"/></VBox.margin>
                 </Label>
 
                 <Button alignment="BASELINE_LEFT" prefHeight="45.0" prefWidth="240.0" style="-fx-background-color: #34495E; -fx-text-fill: white; -fx-cursor: hand;" text="  Dashboard" />
-                <Button alignment="BASELINE_LEFT" prefHeight="45.0" prefWidth="240.0" style="-fx-background-color: transparent; -fx-text-fill: #BDC3C7; -fx-cursor: hand;" text="  Find Mentors" />
+                <Button alignment="BASELINE_LEFT" prefHeight="45.0" prefWidth="240.0" style="-fx-background-color: transparent; -fx-text-fill: #BDC3C7; -fx-cursor: hand;" text="  Find Mentors" fx:id="mentors" onAction="#findMentor"/>
                 <Button alignment="BASELINE_LEFT" prefHeight="45.0" prefWidth="240.0" style="-fx-background-color: transparent; -fx-text-fill: #BDC3C7; -fx-cursor: hand;" text="  Job Board" />
                 <Button alignment="BASELINE_LEFT" prefHeight="45.0" prefWidth="240.0" style="-fx-background-color: transparent; -fx-text-fill: #BDC3C7; -fx-cursor: hand;" text="  Alumni Success" />
                 <Button alignment="BASELINE_LEFT" prefHeight="45.0" prefWidth="240.0" style="-fx-background-color: transparent; -fx-text-fill: #BDC3C7; -fx-cursor: hand;" text="  Messages" />
@@ -43,7 +43,7 @@
 
                 <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;">
                     <content>
-                        <VBox spacing="30.0">
+                        <VBox spacing="30.0" fx:id="changer">
                             <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0" /></padding>
                             <children>
 

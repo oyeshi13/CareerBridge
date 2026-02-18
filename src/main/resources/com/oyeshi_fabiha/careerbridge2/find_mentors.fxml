@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Text?>
+
+<VBox spacing="20.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0" /></padding>
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="20.0">
+            <children>
+                <Label text="Find a Mentor" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #2C3E50;" />
+                <Region HBox.hgrow="ALWAYS" />
+                <ComboBox promptText="Industry" style="-fx-background-radius: 10;" />
+                <ComboBox promptText="Experience" style="-fx-background-radius: 10;" />
+            </children>
+        </HBox>
+
+        <FlowPane hgap="20.0" vgap="20.0">
+            <children>
+                <VBox prefWidth="240.0" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);">
+                    <children>
+                        <HBox alignment="CENTER">
+                            <Circle fill="#ECF0F1" radius="40.0" />
+                        </HBox>
+                        <VBox alignment="CENTER" spacing="5.0">
+                            <Label text="Sarah Jenkins" style="-fx-font-weight: bold; -fx-font-size: 16;" />
+                            <Label text="Senior UX Designer @ Google" style="-fx-text-fill: #7F8C8D; -fx-font-size: 12;" />
+                        </VBox>
+                        <Button maxWidth="Infinity" style="-fx-background-color: #3498DB; -fx-text-fill: white; -fx-background-radius: 10;" text="Connect" />
+                    </children>
+                </VBox>
+
+                <VBox prefWidth="240.0" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);">
+                    <children>
+                        <HBox alignment="CENTER">
+                            <Circle fill="#ECF0F1" radius="40.0" />
+                        </HBox>
+                        <VBox alignment="CENTER" spacing="5.0">
+                            <Label text="Marcus Chen" style="-fx-font-weight: bold; -fx-font-size: 16;" />
+                            <Label text="Software Engineer @ Meta" style="-fx-text-fill: #7F8C8D; -fx-font-size: 12;" />
+                        </VBox>
+                        <Button maxWidth="Infinity" style="-fx-background-color: #3498DB; -fx-text-fill: white; -fx-background-radius: 10;" text="Connect" />
+                    </children>
+                </VBox>
+            </children>
+        </FlowPane>
+    </children>
+</VBox>
