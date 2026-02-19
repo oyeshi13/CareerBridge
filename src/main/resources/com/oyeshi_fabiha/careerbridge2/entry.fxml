@@ -7,45 +7,47 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-      prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.oyeshi_fabiha.careerbridge2.HelloController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DCECF9;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oyeshi_fabiha.careerbridge2.HelloController">
    <Text text="WELCOME" textAlignment="CENTER">
       <font>
-         <Font name="Bondon MT" size="36.0"/>
+         <Font name="Segoe UI" size="36.0" />
       </font>
+      <VBox.margin>
+         <Insets top="10.0" />
+      </VBox.margin>
    </Text>
 
-   <Text text="Do you want to log-in as a Student or an Alumni?" textAlignment="CENTER">
+   <Text text="Do you want to log-in as a Student or an Alumni?" textAlignment="CENTER" wrappingWidth="366.74847412109375">
    <font>
-      <Font size="16.0"/>
+      <Font size="18.0" />
    </font>
    <VBox.margin>
-      <Insets top="10.0"/>
+      <Insets right="10.0" top="60.0" />
    </VBox.margin>
 </Text>
 
+   <RadioButton fx:id="alumniRadio" mnemonicParsing="false" onAction="#handleRoleSelection" style="-fx-background-color: #DCECF9;" text="Alumni">
+      <font>
+         <Font size="20.0" />
+      </font>
+      <VBox.margin>
+         <Insets top="50.0" />
+      </VBox.margin>
+      <toggleGroup>
+         <ToggleGroup fx:id="roleGroup" />
+      </toggleGroup>
+   </RadioButton>
+
+   <RadioButton fx:id="studentRadio" mnemonicParsing="false" onAction="#handleRoleSelection" text="Student" toggleGroup="$roleGroup">
+      <font>
+         <Font size="20.0" />
+      </font>
+      <VBox.margin>
+         <Insets top="20.0" />
+      </VBox.margin>
+   </RadioButton>
+
    <fx:define>
-      <ToggleGroup fx:id="roleGroup"/>
+      <ToggleGroup fx:id="roleGroup" />
    </fx:define>
-
-   <RadioButton fx:id="alumniRadio" mnemonicParsing="false" text="Alumni" toggleGroup="$roleGroup"
-                onAction="#handleRoleSelection">
-      <font>
-         <Font size="20.0"/>
-      </font>
-      <VBox.margin>
-         <Insets top="100.0"/>
-      </VBox.margin>
-   </RadioButton>
-
-   <RadioButton fx:id="studentRadio" mnemonicParsing="false" text="Student" toggleGroup="$roleGroup"
-                onAction="#handleRoleSelection">
-      <font>
-         <Font size="20.0"/>
-      </font>
-      <VBox.margin>
-         <Insets top="20.0"/>
-      </VBox.margin>
-   </RadioButton>
 </VBox>

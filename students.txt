@@ -1,0 +1,9 @@
+abcd|1234|fabiha|1234|cse|2024
+abcd|12345|fabiha|1234|cse|2024
+fabiha2@gmail.com|12345|ishrah|12345|cse|2024
+fabiha1@gmail.com|123445|fabiha ishrah|12345|cse|2022
+f2@gmail.com|12345|fabiha|1234|cse|2024
+maha123|1234|maha|234|cse|2024
+fab123|5678|FABIHA|890|cse|2022
+fabiha888|888|fabiha|888|cse|2006
+ATIA123|1234|ATIA CHOWDHURY ESHA|1234|IPE|2024

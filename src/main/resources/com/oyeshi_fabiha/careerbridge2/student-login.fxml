@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" spacing="20.0" prefHeight="400.0" prefWidth="400.0"
-      style="-fx-background-color: #ffffff; -fx-border-color: #2ecc71; -fx-border-width: 2;"
-      xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.oyeshi_fabiha.careerbridge2.StudentLoginController">
-    <Text text="Student Portal" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-fill: #2c3e50;"/>
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="400.0" spacing="20.0" style="-fx-background-color: #DCECF9; -fx-border-color: #003366; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oyeshi_fabiha.careerbridge2.StudentLoginController">
+    <Text fill="#5580bc" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-fill: #2c3e50;" text="Student Portal" />
 
-    <VBox spacing="10" maxWidth="250">
-        <Label text="Student ID / Email"/>
-        <TextField fx:id="studentIdField" promptText="Enter Student ID"/>
+    <VBox maxWidth="250" spacing="10">
+        <Label text="Student ID / Email" />
+        <TextField fx:id="studentidField" promptText="Enter Student ID" />
 
-        <Label text="Password"/>
-        <PasswordField fx:id="passwordField" promptText="Enter Password"/>
+        <Label text="Password" />
+        <PasswordField fx:id="passwordField" promptText="Enter Password" />
 
-        <Button text="Login" onAction="#handleStudentLogin" prefWidth="Infinity"
-                style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;">
+        <Button onAction="#handleStudentLogin" prefWidth="Infinity" style="-fx-background-color: #003366; -fx-text-fill: white; -fx-font-weight: bold;" text="Login">
             <VBox.margin>
-                <Insets top="10"/>
+                <Insets top="10" />
             </VBox.margin>
         </Button>
 
-        <Hyperlink text="New here? Register now" style="-fx-alignment: CENTER;" onAction="#handleNewRegister"/>
+        <Hyperlink onAction="#handleNewRegister" style="-fx-alignment: CENTER;" text="New here? Register now" />
     </VBox>
 </VBox>
