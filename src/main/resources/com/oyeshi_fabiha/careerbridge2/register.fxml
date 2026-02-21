@@ -9,11 +9,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oyeshi_fabiha.careerbridge2.RegisterController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DCECF9;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oyeshi_fabiha.careerbridge2.RegisterController">
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to CareerBridge" textAlignment="CENTER">
          <font>
-            <Font name="Baskerville Old Face" size="30.0" />
+            <Font name="Segoe UI" size="30.0" />
          </font>
          <VBox.margin>
             <Insets top="20.0" />
@@ -26,7 +26,7 @@
                   <Insets left="20.0" right="20.0" top="4.0" />
                </HBox.margin>
             </Text>
-            <TextField promptText="Name">
+            <TextField fx:id="nameField" promptText="Name">
                <HBox.margin>
                   <Insets left="40.0" />
                </HBox.margin>
@@ -43,7 +43,7 @@
                   <Insets left="20.0" right="20.0" top="4.0" />
                </HBox.margin>
             </Text>
-            <TextField promptText="Number">
+            <TextField fx:id="phoneField" promptText="Number">
                <HBox.margin>
                   <Insets left="-7.0" />
                </HBox.margin>
@@ -60,7 +60,7 @@
                   <Insets left="20.0" right="20.0" top="4.0" />
                </HBox.margin>
             </Text>
-            <TextField promptText="Email">
+            <TextField fx:id="emailField" promptText="Email">
                <HBox.margin>
                   <Insets left="44.0" />
                </HBox.margin>
@@ -77,7 +77,7 @@
                   <Insets left="20.0" right="20.0" top="4.0" />
                </HBox.margin>
             </Text>
-            <PasswordField promptText="Password">
+            <PasswordField fx:id="passField" promptText="Password">
                <HBox.margin>
                   <Insets left="23.0" />
                </HBox.margin>
@@ -87,7 +87,41 @@
             <Insets top="15.0" />
          </VBox.margin>
       </HBox>
-      <Button maxHeight="40.0" maxWidth="80.0" mnemonicParsing="false" onAction="#handleOpacity" style="-fx-background-color: blue; -fx-text-fill: white;" text="Register" fx:id="mybtn">
+      <HBox maxHeight="25.0" prefHeight="100.0" prefWidth="200.0">
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" Department :">
+               <HBox.margin>
+                  <Insets left="16.0" right="20.0" top="4.0" />
+               </HBox.margin>
+            </Text>
+            <TextField fx:id="deptField" promptText="Department">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox layoutX="10.0" layoutY="244.0" maxHeight="26.0" prefHeight="26.0" prefWidth="586.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HSC Batch :">
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" top="4.0" />
+               </HBox.margin>
+            </Text>
+            <TextField fx:id="batchField" promptText="HSC Batch">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+      </HBox>
+      <Button fx:id="mybtn" maxHeight="40.0" maxWidth="80.0" mnemonicParsing="false" onAction="#handleRegister" style="-fx-background-color: blue; -fx-text-fill: white;" text="Register">
          <VBox.margin>
             <Insets top="50.0" />
          </VBox.margin>
