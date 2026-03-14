@@ -2,10 +2,10 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Hyperlink?> <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?> <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
 <VBox alignment="CENTER" prefHeight="400.0" prefWidth="400.0" spacing="20.0" style="-fx-background-color: #DCECF9; -fx-border-color: #003366; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oyeshi_fabiha.careerbridge2.AdminLoginController">
@@ -22,6 +22,16 @@
             <Button onAction="#handleAdminLogin" prefWidth="Infinity" style="-fx-background-color: #003366; -fx-text-fill: white; -fx-font-weight: bold;" text="Login">
                 <VBox.margin><Insets top="10" /></VBox.margin>
             </Button>
+
+            <HBox alignment="CENTER" spacing="5">
+                <children>
+                    <Label text="New alumni?" style="-fx-text-fill: #2c3e50;" />
+                    <Hyperlink onAction="#handleAdminRegister" text="Register here" style="-fx-text-fill: #003366; -fx-padding: 0;" />
+                </children>
+                <VBox.margin>
+                    <Insets top="15" />
+                </VBox.margin>
+            </HBox>
         </VBox>
     </children>
 </VBox>

@@ -7,33 +7,63 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
-
+import javafx.scene.Parent;
+import javafx.scene.Node;
+import javafx.event.ActionEvent;
 import java.io.IOException;
 
 public class AdminLoginController {
 
     @FXML private TextField usernameField;
     @FXML private PasswordField passwordField;
-
+    @FXML private TextField nameField;
+    @FXML private TextField emailField;
+    @FXML private TextField yearField;
+    @FXML private TextField majorField;
+    @FXML private TextField companyField;
+    @FXML private TextField positionField;
+    @FXML private TextField regUsernameField;
+    @FXML private PasswordField regPasswordField;
+    
     @FXML
-    private void handleAdminLogin() {
+    private void handleAdminLogin(ActionEvent event) { // Add parameter
         String user = usernameField.getText();
         String pass = passwordField.getText();
 
-        if (user.equals("admin") && pass.equals("1234")) {
-            System.out.println("Login Successful!");
-            try{
-                FXMLLoader new_loader = new FXMLLoader(getClass().getResource("home.fxml"));
-                Scene scene = new Scene(new_loader.load());
-                Stage currStage = (Stage) usernameField.getScene().getWindow();
-                currStage.setScene(scene);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        if ("admin".equals(user) && "1234".equals(pass)) {
+            switchScene(event, "home.fxml", "Home");
         } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Invalid Credentials");
-            alert.show();
+            showAlert("Invalid Credentials");
+        }
+    }
+
+    private void showAlert(String invalidCredentials) {
+    }
+
+    @FXML
+    public void handleBackToAdminLogin(ActionEvent event) { // Add parameter
+        switchScene(event, "admin-login.fxml", "Admin Login");
+    }
+
+    public void handleAdminRegister(ActionEvent event) {
+        // This takes the user from the Login page to the Registration page
+        switchScene(event, "alumni-registration.fxml", "Register - Career Bridge");
+    }
+
+    // Updated helper method
+    private void switchScene(ActionEvent event, String fxmlFile, String title) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            Parent root = loader.load();
+
+            // This gets the stage from the button that triggered the event
+            Stage currStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            currStage.setScene(new Scene(root));
+            currStage.setTitle(title);
+            currStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

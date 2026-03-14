@@ -19,10 +19,18 @@ public class RegisterController {
 }
 */ package com.oyeshi_fabiha.careerbridge2;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Alert;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class RegisterController {
 
@@ -63,6 +71,27 @@ public class RegisterController {
         passField.clear();
         deptField.clear();
         batchField.clear();
+    }
+
+
+    @FXML
+    public void handleBackToLogin(ActionEvent event) {
+        // Redirects back to student login from registration
+        switchScene(event, "student-login.fxml", "Student Login - Career Bridge");
+    }
+    @FXML
+    private void switchScene(ActionEvent event, String fxmlFile, String title) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            Parent root = loader.load();
+            Stage currStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currStage.setScene(new Scene(root));
+            currStage.setTitle(title);
+            currStage.show();
+        } catch (IOException e) {
+            System.err.println("Error loading " + fxmlFile);
+            e.printStackTrace();
+        }
     }
 
     private void showAlert(Alert.AlertType type, String title, String message) {

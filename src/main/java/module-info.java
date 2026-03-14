@@ -9,6 +9,7 @@ module com.oyeshi_fabiha.careerbridge2 {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires java.desktop;
 
     opens com.oyeshi_fabiha.careerbridge2 to javafx.fxml;
     exports com.oyeshi_fabiha.careerbridge2;
