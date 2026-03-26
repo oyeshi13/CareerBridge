@@ -29,8 +29,10 @@ public class AdminLoginController {
     private void handleAdminLogin(ActionEvent event) { // Add parameter
         String user = usernameField.getText();
         String pass = passwordField.getText();
-
-        if (FileHandler.verifyAlumniLogin(user, pass)) {
+        if(user.equals("admin") && pass.equals("1234")){
+            switchScene(event,"home.fxml","Welcome to CareerBridge");
+        }
+        else if (FileHandler.verifyAlumniLogin(user, pass)) {
             showAlert(Alert.AlertType.INFORMATION, "Success", "Welcome, Alumni!");
             // Go to Alumni Dashboard here
         } else {

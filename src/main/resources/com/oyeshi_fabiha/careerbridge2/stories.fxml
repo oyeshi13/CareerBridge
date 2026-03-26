@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.oyeshi_fabiha.AlumniController" prefWidth="600.0" prefHeight="500.0">
+
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label text="Alumni Success Stories">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+    </Label>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+        <VBox fx:id="storiesContainer" spacing="15.0">
+            <VBox style="-fx-background-color: #f4f4f4; -fx-padding: 10; -fx-background-radius: 5;">
+                <Label text="Jane Doe - Class of '20" style="-fx-font-weight: bold;" />
+                <Label text="Now a Senior Dev at Google. CareerBridge helped me land my first internship!" wrapText="true" />
+            </VBox>
+        </VBox>
+    </ScrollPane>
+
+    <Separator />
+
+    <VBox spacing="10.0">
+        <Label text="Are you an Alumni? Share your story!" style="-fx-font-style: italic;" />
+
+        <HBox spacing="10.0">
+            <TextField fx:id="nameInput" promptText="Your Name &amp; Year" HBox.hgrow="ALWAYS" />
+        </HBox>
+
+        <TextArea fx:id="storyInput" promptText="Write your success story here..." prefHeight="80.0" wrapText="true" />
+
+        <Button fx:id="submitBtn" text="Post My Story" onAction="#handleAddStory"
+                style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold;" />
+    </VBox>
+
+</VBox>

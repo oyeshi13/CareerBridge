@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Text?>
 
-<HBox prefHeight="471.0" prefWidth="852.0" style="-fx-background-color: #F4F7FB;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oyeshi_fabiha.careerbridge2.mentorController">
+<HBox prefHeight="471.0" prefWidth="852.0" style="-fx-background-color: #F4F7FB;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oyeshi_fabiha.careerbridge2.homePageController">
     <children>
         <VBox prefWidth="240.0" spacing="15.0" style="-fx-background-color: #2C3E50;">
             <children>
@@ -21,9 +21,9 @@
                     <VBox.margin><Insets bottom="30.0" left="20.0" top="30.0" /></VBox.margin>
                 </Label>
 
-                <Button alignment="BASELINE_LEFT" prefHeight="45.0" prefWidth="240.0" style="-fx-background-color: #34495E; -fx-text-fill: white; -fx-cursor: hand;" text="  Dashboard" />
+                <Button fx:id="dashboard" alignment="BASELINE_LEFT" prefHeight="45.0" prefWidth="240.0" style="-fx-background-color: #34495E; -fx-text-fill: white; -fx-cursor: hand;" text="  Dashboard" />
                 <Button fx:id="mentors" alignment="BASELINE_LEFT" onAction="#findMentor" prefHeight="45.0" prefWidth="240.0" style="-fx-background-color: transparent; -fx-text-fill: #BDC3C7; -fx-cursor: hand;" text="  Find Mentors" />
-                <Button alignment="BASELINE_LEFT" prefHeight="45.0" prefWidth="240.0" style="-fx-background-color: transparent; -fx-text-fill: #BDC3C7; -fx-cursor: hand;" text="  Alumni Success" />
+                <Button fx:id="stories" alignment="BASELINE_LEFT" prefHeight="45.0" prefWidth="240.0" style="-fx-background-color: transparent; -fx-text-fill: #BDC3C7; -fx-cursor: hand;" text="  Alumni Success" />
                 <Button alignment="BASELINE_LEFT" prefHeight="45.0" prefWidth="240.0" style="-fx-background-color: transparent; -fx-text-fill: #BDC3C7; -fx-cursor: hand;" text="  Messages" />
 
                 <Region VBox.vgrow="ALWAYS" />
