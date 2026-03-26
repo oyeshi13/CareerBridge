@@ -41,4 +41,35 @@ public class FileHandler {
         }
         return false;
     }
+    private static final String ALUMNI_FILE = "alumni.txt";
+
+    // For the RegistrationController to use
+    public static void saveAlumni(String data) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(ALUMNI_FILE, true))) {
+            writer.write(data);
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // For the AdminLoginController to use
+    public static boolean verifyAlumniLogin(String user, String pass) {
+        File file = new File(ALUMNI_FILE);
+        if (!file.exists()) return false;
+        try (Scanner scanner = new Scanner(file)) {
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine().trim();
+                if (line.isEmpty()) continue;
+                String[] parts = line.split("\\|");
+                // Format: Username|Password|...
+                if (parts.length >= 2) {
+                    if (parts[0].equals(user) && parts[1].equals(pass)) {
+                        return true;
+                    }
+                }
+            }
+        } catch (FileNotFoundException e) { e.printStackTrace(); }
+        return false;
+    }
 }

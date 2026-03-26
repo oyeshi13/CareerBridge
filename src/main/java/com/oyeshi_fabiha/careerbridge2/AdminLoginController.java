@@ -16,24 +16,25 @@ public class AdminLoginController {
 
     @FXML private TextField usernameField;
     @FXML private PasswordField passwordField;
-    @FXML private TextField nameField;
+  /*  @FXML private TextField nameField;
     @FXML private TextField emailField;
     @FXML private TextField yearField;
     @FXML private TextField majorField;
     @FXML private TextField companyField;
     @FXML private TextField positionField;
     @FXML private TextField regUsernameField;
-    @FXML private PasswordField regPasswordField;
+    @FXML private PasswordField regPasswordField;*/
     
     @FXML
     private void handleAdminLogin(ActionEvent event) { // Add parameter
         String user = usernameField.getText();
         String pass = passwordField.getText();
 
-        if ("admin".equals(user) && "1234".equals(pass)) {
-            switchScene(event, "home.fxml", "Home");
+        if (FileHandler.verifyAlumniLogin(user, pass)) {
+            showAlert(Alert.AlertType.INFORMATION, "Success", "Welcome, Alumni!");
+            // Go to Alumni Dashboard here
         } else {
-            showAlert("Invalid Credentials");
+            showAlert(Alert.AlertType.ERROR, "Login Failed", "Invalid Username or Password.");
         }
     }
 
@@ -65,5 +66,12 @@ public class AdminLoginController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    private void showAlert(Alert.AlertType type, String title, String message) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }

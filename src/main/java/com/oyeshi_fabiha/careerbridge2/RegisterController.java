@@ -72,12 +72,52 @@ public class RegisterController {
         deptField.clear();
         batchField.clear();
     }
+    @FXML private TextField alumniNameField; // Unique name for Alumni
+    @FXML private TextField alumniEmailField; // Unique name for Alumni
+    @FXML private TextField yearField;
+    @FXML private TextField majorField;
+    @FXML private TextField companyField;
+    @FXML private TextField positionField;
+    @FXML private TextField regUsernameField;
+    @FXML private PasswordField regPasswordField;
 
+    // --- NEW DEDICATED ALUMNI FUNCTION ---
+    @FXML
+    private void handleAdminRegister() {
+        // 1. Collect Alumni-specific data
+        String name = alumniNameField.getText();
+        String email = alumniEmailField.getText();
+        String year = yearField.getText();
+        String major = majorField.getText();
+        String company = companyField.getText();
+        String position = positionField.getText();
+        String user = regUsernameField.getText();
+        String pass = regPasswordField.getText();
 
+        // 2. Format: Username|Password|Name|Email|Year|Major|Company|Position
+        String data = user + "|" + pass + "|" + name + "|" + email + "|" +
+                year + "|" + major + "|" + company + "|" + position;
+
+        // 3. Save to the alumni file
+        FileHandler.saveAlumni(data);
+
+        // 4. Show success alert
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Alumni Registered");
+        alert.setHeaderText(null);
+        alert.setContentText("Account created successfully for: " + name);
+        alert.showAndWait();
+    }
+
+    @FXML
+    private void handleBackToAdminLogin(ActionEvent event) {
+        // This allows the "Back to Login" button on the reg page to actually work
+        switchScene(event, "admin-login.fxml", "Admin Login");
+    }
     @FXML
     public void handleBackToLogin(ActionEvent event) {
         // Redirects back to student login from registration
-        switchScene(event, "student-login.fxml", "Student Login - Career Bridge");
+        switchScene(event, "student-login.fxml", "admin Login - Career Bridge");
     }
     @FXML
     private void switchScene(ActionEvent event, String fxmlFile, String title) {

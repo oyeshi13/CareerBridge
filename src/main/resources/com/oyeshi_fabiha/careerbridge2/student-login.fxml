@@ -13,8 +13,8 @@
     <Text fill="#5580bc" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-fill: #2c3e50;" text="Student Portal" />
 
     <VBox maxWidth="250" spacing="10">
-        <Label text="Student ID / Email" />
-        <TextField fx:id="studentidField" promptText="Enter Student ID" />
+        <Label text="Email" />
+        <TextField fx:id="studentidField" promptText="Enter the connected email address" />
 
         <Label text="Password" />
         <PasswordField fx:id="passwordField" promptText="Enter Password" />
