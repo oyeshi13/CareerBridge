@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.*?>
+
+<HBox prefHeight="600.0" prefWidth="1000.0"
+      style="-fx-background-color: #F0F4F8;"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.oyeshi_fabiha.careerbridge2.StudentHomeController">
+
+    <VBox prefWidth="220.0" spacing="4.0"
+          style="-fx-background-color: #1a1a2e;">
+        <padding><Insets bottom="20.0" left="16.0" right="16.0" top="28.0"/></padding>
+
+        <Label text="CareerBridge"
+               style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;">
+            <VBox.margin><Insets bottom="24.0"/></VBox.margin>
+        </Label>
+
+        <Label text="MENU" style="-fx-text-fill: #4a5568; -fx-font-size: 10px; -fx-font-weight: bold;">
+            <VBox.margin><Insets bottom="8.0"/></VBox.margin>
+        </Label>
+
+        <Button fx:id="btnDashboard" text="  🏠  Dashboard" onAction="#showDashboard"
+                maxWidth="Infinity" prefHeight="42.0"
+                style="-fx-background-color: #3D566E; -fx-text-fill: white; -fx-cursor: hand;
+                       -fx-font-size: 14px; -fx-alignment: BASELINE_LEFT; -fx-background-radius: 8;"/>
+        <Button fx:id="btnMentors" text="  🎓  Find Mentors" onAction="#showMentors"
+                maxWidth="Infinity" prefHeight="42.0"
+                style="-fx-background-color: transparent; -fx-text-fill: #BDC3C7; -fx-cursor: hand;
+                       -fx-font-size: 14px; -fx-alignment: BASELINE_LEFT;"/>
+        <Button fx:id="btnJobs" text="  💼  Job Board" onAction="#showJobs"
+                maxWidth="Infinity" prefHeight="42.0"
+                style="-fx-background-color: transparent; -fx-text-fill: #BDC3C7; -fx-cursor: hand;
+                       -fx-font-size: 14px; -fx-alignment: BASELINE_LEFT;"/>
+        <Button fx:id="btnStories" text="  🌟  Success Stories" onAction="#showStories"
+                maxWidth="Infinity" prefHeight="42.0"
+                style="-fx-background-color: transparent; -fx-text-fill: #BDC3C7; -fx-cursor: hand;
+                       -fx-font-size: 14px; -fx-alignment: BASELINE_LEFT;"/>
+        <Button fx:id="btnMessages" text="  💬  Messages" onAction="#showMessages"
+                maxWidth="Infinity" prefHeight="42.0"
+                style="-fx-background-color: transparent; -fx-text-fill: #BDC3C7; -fx-cursor: hand;
+                       -fx-font-size: 14px; -fx-alignment: BASELINE_LEFT;"/>
+
+        <Region VBox.vgrow="ALWAYS"/>
+
+        <Button text="  🚪  Logout" onAction="#handleLogout" maxWidth="Infinity" prefHeight="42.0"
+                style="-fx-background-color: transparent; -fx-text-fill: #E74C3C; -fx-cursor: hand;
+                       -fx-font-size: 14px; -fx-alignment: BASELINE_LEFT;"/>
+    </VBox>
+
+    <VBox HBox.hgrow="ALWAYS">
+        <HBox alignment="CENTER_LEFT" prefHeight="64.0"
+              style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.06), 8, 0, 0, 3);">
+            <padding><Insets left="24.0" right="24.0"/></padding>
+            <HBox alignment="CENTER_LEFT" spacing="10.0" HBox.hgrow="ALWAYS">
+                <TextField fx:id="topSearchField" promptText="🔍  Search mentors, companies, departments..."
+                           prefWidth="360.0"
+                           style="-fx-background-radius: 20; -fx-padding: 9 16 9 16;
+                                  -fx-background-color: #F0F4F8; -fx-border-color: transparent; -fx-font-size: 13px;"
+                           onAction="#handleSearch"/>
+                <Button text="Search" onAction="#handleSearch"
+                        style="-fx-background-color: #0f3460; -fx-text-fill: white; -fx-background-radius: 20;
+                               -fx-padding: 9 18; -fx-cursor: hand; -fx-font-weight: bold;"/>
+            </HBox>
+            <Region HBox.hgrow="ALWAYS"/>
+            <HBox alignment="CENTER" spacing="10.0">
+                <Label fx:id="welcomeLabel"
+                       style="-fx-font-weight: bold; -fx-text-fill: #2d3748; -fx-font-size: 13px;"/>
+                <Circle fill="#0f3460" radius="18.0"/>
+            </HBox>
+        </HBox>
+
+        <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS"
+                    style="-fx-background-color: transparent; -fx-background: transparent;">
+            <VBox fx:id="contentArea" VBox.vgrow="ALWAYS"/>
+        </ScrollPane>
+    </VBox>
+</HBox>

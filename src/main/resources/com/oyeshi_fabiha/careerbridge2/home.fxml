@@ -23,7 +23,7 @@
 
                 <Button fx:id="dashboard" alignment="BASELINE_LEFT" prefHeight="45.0" prefWidth="240.0" style="-fx-background-color: #34495E; -fx-text-fill: white; -fx-cursor: hand;" text="  Dashboard" />
                 <Button fx:id="mentors" alignment="BASELINE_LEFT" onAction="#findMentor" prefHeight="45.0" prefWidth="240.0" style="-fx-background-color: transparent; -fx-text-fill: #BDC3C7; -fx-cursor: hand;" text="  Find Mentors" />
-                <Button fx:id="stories" alignment="BASELINE_LEFT" prefHeight="45.0" prefWidth="240.0" style="-fx-background-color: transparent; -fx-text-fill: #BDC3C7; -fx-cursor: hand;" text="  Alumni Success" />
+                <Button fx:id="stories" onAction="#findStories" alignment="BASELINE_LEFT" prefHeight="45.0" prefWidth="240.0" style="-fx-background-color: transparent; -fx-text-fill: #BDC3C7; -fx-cursor: hand;" text="  Alumni Success" />
                 <Button alignment="BASELINE_LEFT" prefHeight="45.0" prefWidth="240.0" style="-fx-background-color: transparent; -fx-text-fill: #BDC3C7; -fx-cursor: hand;" text="  Messages" />
 
                 <Region VBox.vgrow="ALWAYS" />

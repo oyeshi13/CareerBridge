@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="24.0" style="-fx-background-color: transparent;"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/></padding>
+
+    <VBox spacing="4.0">
+        <Text text="Alumni Dashboard" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-fill: #1a202c;"/>
+        <Text text="Manage your profile, post jobs, and give back to the community." style="-fx-fill: #718096; -fx-font-size: 13px;"/>
+    </VBox>
+
+    <HBox spacing="20.0">
+        <VBox prefHeight="110.0" HBox.hgrow="ALWAYS" spacing="6.0"
+              style="-fx-background-color: linear-gradient(to right, #6C63FF, #4834d4);
+                     -fx-background-radius: 16; -fx-padding: 22;
+                     -fx-effect: dropshadow(three-pass-box, rgba(108,99,255,0.4), 14, 0, 0, 6);">
+            <Text fill="WHITE" text="Your Impact" style="-fx-font-size: 13px;"/>
+            <Text fill="WHITE" text="Active" style="-fx-font-size: 32px; -fx-font-weight: bold;"/>
+            <Text fill="rgba(255,255,255,0.7)" text="mentor status" style="-fx-font-size: 11px;"/>
+        </VBox>
+
+        <VBox prefHeight="110.0" HBox.hgrow="ALWAYS" spacing="6.0"
+              style="-fx-background-color: white; -fx-background-radius: 16; -fx-padding: 22;
+                     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.07), 12, 0, 0, 4);
+                     -fx-border-color: #e2e8f0; -fx-border-radius: 16;">
+            <Text fill="#718096" text="What You Can Do" style="-fx-font-size: 13px;"/>
+            <Text style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-fill: #27AE60;" text="Post Jobs"/>
+            <Text fill="#a0aec0" text="help students find work" style="-fx-font-size: 11px;"/>
+        </VBox>
+
+        <VBox prefHeight="110.0" HBox.hgrow="ALWAYS" spacing="6.0"
+              style="-fx-background-color: white; -fx-background-radius: 16; -fx-padding: 22;
+                     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.07), 12, 0, 0, 4);
+                     -fx-border-color: #e2e8f0; -fx-border-radius: 16;">
+            <Text fill="#718096" text="Inspire Others" style="-fx-font-size: 13px;"/>
+            <Text style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-fill: #F39C12;" text="Share Story"/>
+            <Text fill="#a0aec0" text="in the stories section" style="-fx-font-size: 11px;"/>
+        </VBox>
+    </HBox>
+
+    <VBox spacing="14.0"
+          style="-fx-background-color: white; -fx-background-radius: 16; -fx-padding: 24;
+                 -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.06), 10, 0, 0, 3);
+                 -fx-border-color: #e2e8f0; -fx-border-radius: 16;">
+        <Text text="🧑‍💼  How You Can Help Students" style="-fx-font-size: 17px; -fx-font-weight: bold; -fx-fill: #2d3748;"/>
+        <VBox spacing="10.0">
+            <Label text="📢  Post a Job → Use the sidebar to add openings at your company"
+                   style="-fx-text-fill: #4a5568; -fx-font-size: 13px;"/>
+            <Label text="✍️  Share Your Story → Inspire juniors with your career journey"
+                   style="-fx-text-fill: #4a5568; -fx-font-size: 13px;"/>
+            <Label text="📧  Students can view and reach out to you via your registered email"
+                   style="-fx-text-fill: #4a5568; -fx-font-size: 13px;"/>
+        </VBox>
+    </VBox>
+</VBox>

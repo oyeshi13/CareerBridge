@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="24.0" style="-fx-background-color: transparent;"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.oyeshi_fabiha.careerbridge2.StudentDashboardController">
+    <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/></padding>
+
+    <VBox spacing="4.0">
+        <Text text="Your Dashboard" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-fill: #1a202c;"/>
+        <Text text="Here's what's happening in your network today." style="-fx-fill: #718096; -fx-font-size: 13px;"/>
+    </VBox>
+
+    <HBox spacing="20.0">
+        <VBox prefHeight="110.0" HBox.hgrow="ALWAYS" spacing="6.0"
+              style="-fx-background-color: linear-gradient(to right, #6C63FF, #4834d4);
+                     -fx-background-radius: 16; -fx-padding: 22;
+                     -fx-effect: dropshadow(three-pass-box, rgba(108,99,255,0.4), 14, 0, 0, 6);">
+            <Text fill="WHITE" text="Alumni Mentors" style="-fx-font-size: 13px;"/>
+            <Label fx:id="alumniCountLabel" text="—"
+                   style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Text fill="rgba(255,255,255,0.7)" text="ready to connect" style="-fx-font-size: 11px;"/>
+        </VBox>
+
+        <VBox prefHeight="110.0" HBox.hgrow="ALWAYS" spacing="6.0"
+              style="-fx-background-color: white; -fx-background-radius: 16; -fx-padding: 22;
+                     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.07), 12, 0, 0, 4);
+                     -fx-border-color: #e2e8f0; -fx-border-radius: 16;">
+            <Text fill="#718096" text="Job Listings" style="-fx-font-size: 13px;"/>
+            <Label fx:id="jobCountLabel" text="—"
+                   style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #27AE60;"/>
+            <Text fill="#a0aec0" text="open positions" style="-fx-font-size: 11px;"/>
+        </VBox>
+
+        <VBox prefHeight="110.0" HBox.hgrow="ALWAYS" spacing="6.0"
+              style="-fx-background-color: white; -fx-background-radius: 16; -fx-padding: 22;
+                     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.07), 12, 0, 0, 4);
+                     -fx-border-color: #e2e8f0; -fx-border-radius: 16;">
+            <Text fill="#718096" text="Success Stories" style="-fx-font-size: 13px;"/>
+            <Label fx:id="storyCountLabel" text="—"
+                   style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #F39C12;"/>
+            <Text fill="#a0aec0" text="inspiring journeys" style="-fx-font-size: 11px;"/>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="20.0">
+        <VBox spacing="14.0" HBox.hgrow="ALWAYS"
+              style="-fx-background-color: white; -fx-background-radius: 16; -fx-padding: 22;
+                     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.06), 10, 0, 0, 3);
+                     -fx-border-color: #e2e8f0; -fx-border-radius: 16;">
+            <Text text="🎯  Quick Actions" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-fill: #2d3748;"/>
+            <VBox spacing="10.0">
+                <Label text="👈  Use the sidebar to navigate between sections"
+                       style="-fx-text-fill: #4a5568; -fx-font-size: 13px;"/>
+                <Label text="🔍  Use the search bar to find mentors instantly"
+                       style="-fx-text-fill: #4a5568; -fx-font-size: 13px;"/>
+                <Label text="🎓  Click 'Connect' on any mentor card to see their contact"
+                       style="-fx-text-fill: #4a5568; -fx-font-size: 13px;"/>
+                <Label text="💼  Browse the Job Board for opportunities posted by alumni"
+                       style="-fx-text-fill: #4a5568; -fx-font-size: 13px;"/>
+                <Label text="🌟  Read alumni success stories for inspiration"
+                       style="-fx-text-fill: #4a5568; -fx-font-size: 13px;"/>
+            </VBox>
+        </VBox>
+
+        <VBox spacing="14.0" prefWidth="280.0"
+              style="-fx-background-color: #1a1a2e; -fx-background-radius: 16; -fx-padding: 22;
+                     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 12, 0, 0, 4);">
+            <Text text="📅  Upcoming Events" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-fill: white;"/>
+            <VBox spacing="10.0">
+                <VBox spacing="4.0"
+                      style="-fx-background-color: rgba(255,255,255,0.07); -fx-padding: 12; -fx-background-radius: 10;">
+                    <Label text="Tech Meetup 2026" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+                    <Label text="April 5 — Alumni Hall" style="-fx-text-fill: #a0aec0; -fx-font-size: 12px;"/>
+                </VBox>
+                <VBox spacing="4.0"
+                      style="-fx-background-color: rgba(255,255,255,0.07); -fx-padding: 12; -fx-background-radius: 10;">
+                    <Label text="Resume Workshop" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+                    <Label text="April 18 — Virtual (Zoom)" style="-fx-text-fill: #a0aec0; -fx-font-size: 12px;"/>
+                </VBox>
+                <VBox spacing="4.0"
+                      style="-fx-background-color: rgba(255,255,255,0.07); -fx-padding: 12; -fx-background-radius: 10;">
+                    <Label text="Industry Panel" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+                    <Label text="May 3 — Auditorium B" style="-fx-text-fill: #a0aec0; -fx-font-size: 12px;"/>
+                </VBox>
+            </VBox>
+        </VBox>
+    </HBox>
+</VBox>

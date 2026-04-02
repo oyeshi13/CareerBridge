@@ -1,79 +1,53 @@
 package com.oyeshi_fabiha.careerbridge2;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert;
-import javafx.stage.Stage;
-import javafx.scene.Parent;
-import javafx.scene.Node;
-import javafx.event.ActionEvent;
-import java.io.IOException;
 
 public class AdminLoginController {
 
     @FXML private TextField usernameField;
     @FXML private PasswordField passwordField;
-  /*  @FXML private TextField nameField;
-    @FXML private TextField emailField;
-    @FXML private TextField yearField;
-    @FXML private TextField majorField;
-    @FXML private TextField companyField;
-    @FXML private TextField positionField;
-    @FXML private TextField regUsernameField;
-    @FXML private PasswordField regPasswordField;*/
-    
+
     @FXML
-    private void handleAdminLogin(ActionEvent event) { // Add parameter
-        String user = usernameField.getText();
-        String pass = passwordField.getText();
-        if(user.equals("admin") && pass.equals("1234")){
-            switchScene(event,"home.fxml","Welcome to CareerBridge");
+    private void handleAdminLogin(ActionEvent event) {
+        String user = usernameField.getText().trim();
+        String pass = passwordField.getText().trim();
+
+        if (user.isEmpty() || pass.isEmpty()) {
+            showAlert(Alert.AlertType.WARNING, "Missing Info", "Please enter username and password.");
+            return;
         }
-        else if (FileHandler.verifyAlumniLogin(user, pass)) {
-            showAlert(Alert.AlertType.INFORMATION, "Success", "Welcome, Alumni!");
-            // Go to Alumni Dashboard here
+
+        if (user.equals("admin") && pass.equals("1234")) {
+            Session.get().login("admin", "Admin", Session.Role.ADMIN);
+            SceneHelper.switchTo(event, "admin-dashboard.fxml", "Admin Dashboard");
+        } else if (FileHandler.verifyAlumniLogin(user, pass)) {
+            String name = FileHandler.getAlumniName(user);
+            Session.get().login(user, name, Session.Role.ALUMNI);
+            SceneHelper.switchTo(event, "alumni-home.fxml", "Alumni Dashboard");
         } else {
-            showAlert(Alert.AlertType.ERROR, "Login Failed", "Invalid Username or Password.");
+            showAlert(Alert.AlertType.ERROR, "Login Failed", "Invalid username or password.");
         }
-    }
-
-    private void showAlert(String invalidCredentials) {
     }
 
     @FXML
-    public void handleBackToAdminLogin(ActionEvent event) { // Add parameter
-        switchScene(event, "admin-login.fxml", "Admin Login");
-    }
-
     public void handleAdminRegister(ActionEvent event) {
-        // This takes the user from the Login page to the Registration page
-        switchScene(event, "alumni-registration.fxml", "Register - Career Bridge");
+        SceneHelper.switchTo(event, "alumni-registration.fxml", "Alumni Registration");
     }
 
-    // Updated helper method
-    private void switchScene(ActionEvent event, String fxmlFile, String title) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
-            Parent root = loader.load();
-
-            // This gets the stage from the button that triggered the event
-            Stage currStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            currStage.setScene(new Scene(root));
-            currStage.setTitle(title);
-            currStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    @FXML
+    private void handleBack(ActionEvent event) {
+        SceneHelper.switchTo(event, "entry.fxml", "Welcome");
     }
-    private void showAlert(Alert.AlertType type, String title, String message) {
-        Alert alert = new Alert(type);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
+
+    private void showAlert(Alert.AlertType type, String title, String msg) {
+        Alert a = new Alert(type);
+        a.setTitle(title);
+        a.setHeaderText(null);
+        a.setContentText(msg);
+        a.showAndWait();
     }
 }

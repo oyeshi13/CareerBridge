@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox prefHeight="500.0" style="-fx-background-color: transparent;"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.oyeshi_fabiha.careerbridge2.MessagingController">
+
+    <!-- LEFT PANEL: Contacts -->
+    <VBox prefWidth="260.0" spacing="0"
+          style="-fx-background-color: white; -fx-border-color: #e2e8f0; -fx-border-width: 0 1 0 0;">
+
+        <!-- Header -->
+        <HBox alignment="CENTER_LEFT" spacing="10" prefHeight="60"
+              style="-fx-background-color: #f8fafc; -fx-border-color: #e2e8f0; -fx-border-width: 0 0 1 0;">
+            <padding><Insets left="14" right="10" top="0" bottom="0"/></padding>
+            <Text text="💬  Messages" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-fill: #1a202c;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="＋" onAction="#handleNewChat"
+                    style="-fx-background-color: #6C63FF; -fx-text-fill: white; -fx-background-radius: 20;
+                           -fx-font-size: 16px; -fx-cursor: hand; -fx-padding: 2 10;"/>
+        </HBox>
+
+        <!-- Contact list -->
+        <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS"
+                    style="-fx-background-color: transparent; -fx-background: transparent;">
+            <VBox fx:id="contactsList" spacing="2">
+                <padding><Insets top="8" bottom="8"/></padding>
+            </VBox>
+        </ScrollPane>
+    </VBox>
+
+    <!-- RIGHT PANEL: Chat -->
+    <VBox HBox.hgrow="ALWAYS" style="-fx-background-color: #f0f4f8;">
+
+        <!-- Chat area (shown when contact selected) -->
+        <VBox fx:id="chatBox" VBox.vgrow="ALWAYS" spacing="0">
+            <!-- Chat header -->
+            <HBox prefHeight="56" alignment="CENTER_LEFT"
+                  style="-fx-background-color: white; -fx-border-color: #e2e8f0; -fx-border-width: 0 0 1 0;">
+                <padding><Insets left="20"/></padding>
+                <Label fx:id="chatHeader" text=""
+                       style="-fx-font-weight: bold; -fx-text-fill: #2d3748; -fx-font-size: 15px;"/>
+            </HBox>
+
+            <!-- Messages -->
+            <ScrollPane fx:id="chatScroll" fitToWidth="true" VBox.vgrow="ALWAYS"
+                        style="-fx-background-color: transparent; -fx-background: transparent;">
+                <VBox fx:id="chatArea" spacing="6">
+                    <padding><Insets top="14" bottom="14"/></padding>
+                </VBox>
+            </ScrollPane>
+
+            <!-- Input row -->
+            <HBox spacing="10" prefHeight="60" alignment="CENTER"
+                  style="-fx-background-color: white; -fx-border-color: #e2e8f0; -fx-border-width: 1 0 0 0;">
+                <padding><Insets left="14" right="14"/></padding>
+                <TextField fx:id="messageInput" promptText="Type a message..."
+                           HBox.hgrow="ALWAYS"
+                           style="-fx-background-radius: 20; -fx-padding: 10 16; -fx-background-color: #f0f4f8;
+                                  -fx-border-color: transparent; -fx-font-size: 13px;"/>
+                <Button fx:id="sendBtn" text="Send ➤"
+                        style="-fx-background-color: #6C63FF; -fx-text-fill: white; -fx-font-weight: bold;
+                               -fx-background-radius: 20; -fx-padding: 10 20; -fx-cursor: hand;"/>
+            </HBox>
+        </VBox>
+
+        <!-- New contact pane (shown when + is clicked) -->
+        <VBox fx:id="newContactPane" alignment="CENTER" spacing="16" VBox.vgrow="ALWAYS">
+            <padding><Insets left="40" right="40"/></padding>
+            <Text text="📬" style="-fx-font-size: 48px;"/>
+            <Text text="Select a contact from the left panel to start chatting."
+                  style="-fx-fill: #718096; -fx-font-size: 14px; -fx-text-alignment: center;" wrappingWidth="300"/>
+        </VBox>
+
+        <!-- Empty state when nothing is selected -->
+        <VBox alignment="CENTER" spacing="16" VBox.vgrow="ALWAYS">
+            <Text text="💬" style="-fx-font-size: 48px;"/>
+            <Text text="Select a conversation to get started."
+                  style="-fx-fill: #a0aec0; -fx-font-size: 14px;"/>
+        </VBox>
+    </VBox>
+</HBox>

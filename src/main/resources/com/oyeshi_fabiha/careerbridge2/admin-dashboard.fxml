@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox prefHeight="600.0" prefWidth="1000.0"
+      style="-fx-background-color: #F0F4F8;"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.oyeshi_fabiha.careerbridge2.AdminDashboardController">
+
+    <VBox prefWidth="220.0" spacing="4.0"
+          style="-fx-background-color: #1a1a2e;">
+        <padding><Insets bottom="20.0" left="16.0" right="16.0" top="28.0"/></padding>
+
+        <Label text="CareerBridge"
+               style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;">
+            <VBox.margin><Insets bottom="4.0"/></VBox.margin>
+        </Label>
+        <Label text="Admin Panel" style="-fx-text-fill: #E74C3C; -fx-font-size: 11px;">
+            <VBox.margin><Insets bottom="20.0"/></VBox.margin>
+        </Label>
+
+        <Button fx:id="btnOverview" text="  📊  Overview" onAction="#showOverview"
+                maxWidth="Infinity" prefHeight="42.0"
+                style="-fx-background-color: #3D566E; -fx-text-fill: white; -fx-cursor: hand;
+                       -fx-font-size: 14px; -fx-alignment: BASELINE_LEFT; -fx-background-radius: 8;"/>
+        <Button fx:id="btnAlumni" text="  🎓  All Alumni" onAction="#showAlumni"
+                maxWidth="Infinity" prefHeight="42.0"
+                style="-fx-background-color: transparent; -fx-text-fill: #BDC3C7; -fx-cursor: hand;
+                       -fx-font-size: 14px; -fx-alignment: BASELINE_LEFT;"/>
+
+        <Region VBox.vgrow="ALWAYS"/>
+        <Button text="  🚪  Logout" onAction="#handleLogout" maxWidth="Infinity" prefHeight="42.0"
+                style="-fx-background-color: transparent; -fx-text-fill: #E74C3C; -fx-cursor: hand;
+                       -fx-font-size: 14px; -fx-alignment: BASELINE_LEFT;"/>
+    </VBox>
+
+    <VBox HBox.hgrow="ALWAYS">
+        <HBox alignment="CENTER_LEFT" prefHeight="64.0"
+              style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.06), 8, 0, 0, 3);">
+            <padding><Insets left="24.0" right="24.0"/></padding>
+            <Label fx:id="welcomeLabel" text="Admin Panel"
+                   style="-fx-font-weight: bold; -fx-text-fill: #2d3748; -fx-font-size: 15px;"/>
+        </HBox>
+
+        <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS"
+                    style="-fx-background-color: transparent; -fx-background: transparent;">
+            <VBox fx:id="contentArea" VBox.vgrow="ALWAYS"/>
+        </ScrollPane>
+    </VBox>
+</HBox>

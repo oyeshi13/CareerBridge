@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="24.0" style="-fx-background-color: transparent;"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.oyeshi_fabiha.careerbridge2.AdminOverviewController">
+    <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/></padding>
+
+    <VBox spacing="4.0">
+        <Text text="System Overview" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-fill: #1a202c;"/>
+        <Text text="All platform statistics at a glance." style="-fx-fill: #718096; -fx-font-size: 13px;"/>
+    </VBox>
+
+    <HBox spacing="20.0">
+        <VBox prefHeight="110.0" HBox.hgrow="ALWAYS" spacing="6.0"
+              style="-fx-background-color: linear-gradient(to right, #6C63FF, #4834d4);
+                     -fx-background-radius: 16; -fx-padding: 22;">
+            <Text fill="WHITE" text="Total Alumni" style="-fx-font-size: 13px;"/>
+            <Label fx:id="alumniCount" text="—"
+                   style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+        </VBox>
+        <VBox prefHeight="110.0" HBox.hgrow="ALWAYS" spacing="6.0"
+              style="-fx-background-color: white; -fx-background-radius: 16; -fx-padding: 22;
+                     -fx-border-color: #e2e8f0; -fx-border-radius: 16;">
+            <Text fill="#718096" text="Total Students" style="-fx-font-size: 13px;"/>
+            <Label fx:id="studentCount" text="—"
+                   style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #27AE60;"/>
+        </VBox>
+        <VBox prefHeight="110.0" HBox.hgrow="ALWAYS" spacing="6.0"
+              style="-fx-background-color: white; -fx-background-radius: 16; -fx-padding: 22;
+                     -fx-border-color: #e2e8f0; -fx-border-radius: 16;">
+            <Text fill="#718096" text="Job Listings" style="-fx-font-size: 13px;"/>
+            <Label fx:id="jobCount" text="—"
+                   style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #F39C12;"/>
+        </VBox>
+        <VBox prefHeight="110.0" HBox.hgrow="ALWAYS" spacing="6.0"
+              style="-fx-background-color: white; -fx-background-radius: 16; -fx-padding: 22;
+                     -fx-border-color: #e2e8f0; -fx-border-radius: 16;">
+            <Text fill="#718096" text="Stories Shared" style="-fx-font-size: 13px;"/>
+            <Label fx:id="storyCount" text="—"
+                   style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #E74C3C;"/>
+        </VBox>
+    </HBox>
+</VBox>

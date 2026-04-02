@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="24.0" style="-fx-background-color: transparent;"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.oyeshi_fabiha.careerbridge2.AlumniProfileController">
+    <padding><Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/></padding>
+
+    <Text text="My Profile" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-fill: #1a202c;"/>
+
+    <HBox spacing="24.0" alignment="CENTER_LEFT">
+        <StackPane>
+            <Circle fx:id="avatarCircle" radius="50.0" fill="#6C63FF"/>
+            <Label fx:id="avatarInitials" text="?"
+                   style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;"/>
+        </StackPane>
+        <VBox spacing="6.0">
+            <Label fx:id="profileName" text=""
+                   style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1a202c;"/>
+            <Label fx:id="profileRole" text=""
+                   style="-fx-text-fill: #718096; -fx-font-size: 14px;"/>
+            <Label fx:id="profileBadge" text="Alumni"
+                   style="-fx-background-color: #ede9fe; -fx-text-fill: #6C63FF; -fx-font-weight: bold;
+                          -fx-padding: 4 12; -fx-background-radius: 12; -fx-font-size: 12px;"/>
+        </VBox>
+    </HBox>
+
+    <GridPane hgap="20.0" vgap="14.0" maxWidth="560.0"
+              style="-fx-background-color: white; -fx-background-radius: 16; -fx-padding: 24;
+                     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.06), 10, 0, 0, 3);
+                     -fx-border-color: #e2e8f0; -fx-border-radius: 16;">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="35"/>
+            <ColumnConstraints percentWidth="65"/>
+        </columnConstraints>
+
+        <Label text="📧  Email" style="-fx-text-fill: #718096; -fx-font-size: 13px;" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <Label fx:id="profileEmail" text="" style="-fx-text-fill: #2d3748; -fx-font-size: 13px;" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="🎓  Department" style="-fx-text-fill: #718096; -fx-font-size: 13px;" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <Label fx:id="profileMajor" text="" style="-fx-text-fill: #2d3748; -fx-font-size: 13px;" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="📅  Graduation Year" style="-fx-text-fill: #718096; -fx-font-size: 13px;" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <Label fx:id="profileYear" text="" style="-fx-text-fill: #2d3748; -fx-font-size: 13px;" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="🏢  Company" style="-fx-text-fill: #718096; -fx-font-size: 13px;" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <Label fx:id="profileCompany" text="" style="-fx-text-fill: #2d3748; -fx-font-size: 13px;" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="💼  Position" style="-fx-text-fill: #718096; -fx-font-size: 13px;" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <Label fx:id="profilePosition" text="" style="-fx-text-fill: #2d3748; -fx-font-size: 13px;" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    </GridPane>
+</VBox>

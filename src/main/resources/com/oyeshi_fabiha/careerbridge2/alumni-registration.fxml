@@ -1,71 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="650.0" prefWidth="450.0" spacing="20.0" style="-fx-background-color: #DCECF9; -fx-border-color: #003366; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oyeshi_fabiha.careerbridge2.RegisterController">
+<HBox prefHeight="600.0" prefWidth="880.0"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.oyeshi_fabiha.careerbridge2.RegisterController">
 
-    <children>
-        <Text style="-fx-font-size: 24; -fx-font-weight: bold; -fx-fill: #2c3e50;" text="Alumni Registration" />
+    <VBox alignment="CENTER" prefWidth="300.0"
+          style="-fx-background-color: linear-gradient(to bottom, #6C63FF, #4834d4);">
+        <padding><Insets bottom="40.0" left="30.0" right="30.0" top="40.0"/></padding>
+        <Text text="Alumni Registration" style="-fx-fill: white; -fx-font-size: 22px; -fx-font-weight: bold;"/>
+        <TextArea text="Join as a mentor. Share your experience, post jobs, and inspire the next generation."
+              style="-fx-fill: rgba(255,255,255,0.8); -fx-font-size: 13px;" wrapText="true">
+            <VBox.margin><Insets top="12.0"/></VBox.margin>
+        </TextArea>
+    </VBox>
 
-        <GridPane hgap="10" maxWidth="350" vgap="15">
-            <columnConstraints>
-                <ColumnConstraints percentWidth="40" />
-                <ColumnConstraints percentWidth="60" />
-            </columnConstraints>
+    <ScrollPane fitToWidth="true" HBox.hgrow="ALWAYS"
+                style="-fx-background-color: #f8fafc; -fx-background: #f8fafc;">
+        <VBox alignment="CENTER" spacing="16.0" style="-fx-background-color: #f8fafc;">
+            <padding><Insets bottom="40.0" left="50.0" right="50.0" top="40.0"/></padding>
 
-            <children>
-                <Label text="Full Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                <TextField fx:id="alumniNameField" promptText="John Doe" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Text text="Create Alumni Account" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #1a202c;"/>
 
-                <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                <TextField fx:id="alumniEmailField" promptText="example@mail.com" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <GridPane hgap="16.0" vgap="12.0" maxWidth="480.0">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="50"/>
+                    <ColumnConstraints percentWidth="50"/>
+                </columnConstraints>
 
-                <Label text="Graduation Year:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                <TextField fx:id="yearField" promptText="e.g. 2022" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Full Name *" style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #4a5568;"
+                       GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="alumniNameField" promptText="John Doe"
+                           style="-fx-background-radius: 8; -fx-padding: 9; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-background-color: white;"
+                           GridPane.columnIndex="0" GridPane.rowIndex="1"/>
 
-                <Label text="Major/Department:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                <TextField fx:id="majorField" promptText="Computer Science" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label text="Email Address" style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #4a5568;"
+                       GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <TextField fx:id="alumniEmailField" promptText="john@example.com"
+                           style="-fx-background-radius: 8; -fx-padding: 9; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-background-color: white;"
+                           GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
-                <Label text="Current Company:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-                <TextField fx:id="companyField" promptText="e.g. Google, TechCorp" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label text="Graduation Year" style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #4a5568;"
+                       GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextField fx:id="yearField" promptText="e.g. 2022"
+                           style="-fx-background-radius: 8; -fx-padding: 9; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-background-color: white;"
+                           GridPane.columnIndex="0" GridPane.rowIndex="3"/>
 
-                <Label text="Current Position:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-                <TextField fx:id="positionField" promptText="e.g. Software Engineer" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Label text="Major / Department" style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #4a5568;"
+                       GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <TextField fx:id="majorField" promptText="Computer Science"
+                           style="-fx-background-radius: 8; -fx-padding: 9; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-background-color: white;"
+                           GridPane.columnIndex="1" GridPane.rowIndex="3"/>
 
-                <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-                <TextField fx:id="regUsernameField" promptText="Choose a username" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <Label text="Current Company" style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #4a5568;"
+                       GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <TextField fx:id="companyField" promptText="e.g. Google"
+                           style="-fx-background-radius: 8; -fx-padding: 9; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-background-color: white;"
+                           GridPane.columnIndex="0" GridPane.rowIndex="5"/>
 
-                <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
-                <PasswordField fx:id="regPasswordField" promptText="Create password" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            </children>
-         <rowConstraints>
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-         </rowConstraints>
-        </GridPane>
+                <Label text="Current Position" style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #4a5568;"
+                       GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <TextField fx:id="positionField" promptText="Software Engineer"
+                           style="-fx-background-radius: 8; -fx-padding: 9; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-background-color: white;"
+                           GridPane.columnIndex="1" GridPane.rowIndex="5"/>
 
-        <VBox maxWidth="350" spacing="10">
-            <Button onAction="#handleAdminRegister" prefWidth="Infinity" style="-fx-background-color: #003366; -fx-text-fill: white; -fx-font-weight: bold;" text="Register Now" />
+                <Label text="Username *" style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #4a5568;"
+                       GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+                <TextField fx:id="regUsernameField" promptText="Choose a username"
+                           style="-fx-background-radius: 8; -fx-padding: 9; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-background-color: white;"
+                           GridPane.columnIndex="0" GridPane.rowIndex="7"/>
 
-            <Button onAction="#handleBackToAdminLogin" prefWidth="Infinity" style="-fx-background-color: transparent; -fx-text-fill: #003366; -fx-border-color: #003366;" text="Back to Login" />
+                <Label text="Password *" style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #4a5568;"
+                       GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                <PasswordField fx:id="regPasswordField" promptText="Create a password"
+                               style="-fx-background-radius: 8; -fx-padding: 9; -fx-border-color: #e2e8f0; -fx-border-radius: 8; -fx-background-color: white;"
+                               GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+            </GridPane>
+
+            <HBox spacing="12.0" maxWidth="480.0">
+                <Button text="Register as Alumni" onAction="#handleAdminRegister" HBox.hgrow="ALWAYS"
+                        style="-fx-background-color: #6C63FF; -fx-text-fill: white; -fx-font-weight: bold;
+                               -fx-background-radius: 10; -fx-padding: 11; -fx-font-size: 14px; -fx-cursor: hand;"/>
+                <Button text="← Back to Login" onAction="#handleBackToAdminLogin"
+                        style="-fx-background-color: #e2e8f0; -fx-text-fill: #4a5568; -fx-font-weight: bold;
+                               -fx-background-radius: 10; -fx-padding: 11; -fx-cursor: hand;"/>
+            </HBox>
         </VBox>
-    </children>
-    <padding>
-        <Insets bottom="20" left="20" right="20" top="20" />
-    </padding>
-</VBox>
+    </ScrollPane>
+</HBox>

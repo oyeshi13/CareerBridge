@@ -4,47 +4,44 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
-
 import javafx.stage.Stage;
+
 import java.io.IOException;
 
 public class HelloController {
 
-    public Label welcomeText;
     @FXML private RadioButton alumniRadio;
     @FXML private RadioButton studentRadio;
+
     @FXML
-    private void handleRoleSelection() {
+    private void handleRoleSelection(ActionEvent event) {
         if (alumniRadio.isSelected()) {
-            openNewWindow("admin-login.fxml", "Admin Login");
+            openWindow(event, "admin-login.fxml", "Alumni Login");
         } else if (studentRadio.isSelected()) {
-            openNewWindow("student-login.fxml", "Student Login");
+            openWindow(event, "student-login.fxml", "Student Login");
         }
     }
 
-    private void openNewWindow(String fxmlFile, String title) {
+    private void openWindow(ActionEvent event, String fxml, String title) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage newStage = new Stage();
-            newStage.setTitle(title + " - CareerBridge");
-            newStage.setScene(scene);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+            Scene scene = new Scene(loader.load());
+            Stage stage = new Stage();
+            stage.setTitle(title + " — CareerBridge");
+            stage.setResizable(false);
+            stage.setScene(scene);
 
+            Stage current = (Stage) alumniRadio.getScene().getWindow();
+            current.close();
 
-            newStage.setOnCloseRequest(e -> {
+            stage.setOnCloseRequest(e -> {
                 javafx.application.Platform.exit();
                 System.exit(0);
             });
-
-            Stage currentStage = (Stage) studentRadio.getScene().getWindow();
-            currentStage.close();
-
-            newStage.show();
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 }
