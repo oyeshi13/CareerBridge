@@ -33,7 +33,7 @@ public class AlumniHomeController implements Initializable {
     }
 
     @FXML private void showDashboard(ActionEvent e)  { loadPage("dashboard-alumni.fxml"); setActive(btnDashboard); }
-    @FXML private void showPostJob(ActionEvent e)    { loadPage("post-job.fxml");          setActive(btnPostJob); }
+    @FXML private void showPostJob(ActionEvent e)    { loadPage("job_board.fxml");          setActive(btnPostJob); }
     @FXML private void showStories(ActionEvent e)    { loadPage("stories.fxml");           setActive(btnStories); }
     @FXML private void showMessages(ActionEvent e)   { loadPage("messaging.fxml");         setActive(btnMessages); }
     @FXML private void showProfile(ActionEvent e)    { loadPage("alumni-profile.fxml");    setActive(btnProfile); }
