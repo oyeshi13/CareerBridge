@@ -45,7 +45,6 @@ public class MessagingController implements Initializable {
         List<String> contacts = FileHandler.getContacts(me);
 
         // Add all alumni as possible contacts for students, and all students for alumni
-        // so fresh users can still start conversations
         if (Session.get().getRole() == Session.Role.STUDENT) {
             for (FileHandler.Alumni a : FileHandler.getAllAlumni()) {
                 if (!contacts.contains(a.username)) contacts.add(a.username);
@@ -140,7 +139,7 @@ public class MessagingController implements Initializable {
             chatArea.getChildren().add(buildBubble(msg, isMine, accentColor));
         }
 
-        // Scroll to bottom
+
         chatScroll.layout();
         chatScroll.setVvalue(1.0);
     }
@@ -164,7 +163,7 @@ public class MessagingController implements Initializable {
         wrapper.setPadding(new Insets(3, 12, 3, 12));
         wrapper.setAlignment(isMine ? Pos.CENTER_RIGHT : Pos.CENTER_LEFT);
 
-        // Wrap in VBox for proper layout
+
         VBox outer = new VBox(wrapper);
         return outer;
     }
@@ -194,11 +193,11 @@ public class MessagingController implements Initializable {
     }
 
     private String resolveDisplayName(String id) {
-        // Try alumni first
+
         for (FileHandler.Alumni a : FileHandler.getAllAlumni()) {
             if (a.username.equalsIgnoreCase(id)) return a.name.isEmpty() ? id : a.name;
         }
-        // Try students
+
         String name = FileHandler.getStudentName(id);
         return name.equals("Student") ? id : name;
     }
