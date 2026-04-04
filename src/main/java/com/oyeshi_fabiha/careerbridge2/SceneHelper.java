@@ -24,15 +24,5 @@ public class SceneHelper {
         }
     }
 
-    public static void switchTo(Stage stage, String fxml, String title) {
-        try {
-            FXMLLoader loader = new FXMLLoader(SceneHelper.class.getResource(fxml));
-            Parent root = loader.load();
-            stage.setScene(new Scene(root));
-            stage.setTitle(title + " — CareerBridge");
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
 }
