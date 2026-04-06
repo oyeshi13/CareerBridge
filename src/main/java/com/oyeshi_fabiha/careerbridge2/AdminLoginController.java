@@ -21,10 +21,7 @@ public class AdminLoginController {
             return;
         }
 
-        if (user.equals("admin") && pass.equals("1234")) {
-            Session.get().login("admin", "Admin", Session.Role.ADMIN);
-            SceneHelper.switchTo(event, "admin-dashboard.fxml", "Admin Dashboard");
-        } else if (FileHandler.verifyAlumniLogin(user, pass)) {
+         if (FileHandler.verifyAlumniLogin(user, pass)) {
             String name = FileHandler.getAlumniName(user);
             Session.get().login(user, name, Session.Role.ALUMNI);
             SceneHelper.switchTo(event, "alumni-home.fxml", "Alumni Dashboard");

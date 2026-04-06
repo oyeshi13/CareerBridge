@@ -22,7 +22,7 @@ public class FileHandler {
     public static boolean verifyLogin(String emailOrUsername, String password) {
         for (String line : readLines(STUDENT_FILE)) {
             String[] p = line.split("\\|");
-            if (p.length >= 2 && p[0].trim().equalsIgnoreCase(emailOrUsername) && p[1].trim().equals(password))
+            if (p.length >= 2 && p[0].trim().equals(emailOrUsername) && p[1].trim().equals(password))
                 return true;
         }
         return false;

@@ -54,7 +54,7 @@ public class RegisterController {
         String major    = majorField.getText().trim();
         String company  = companyField.getText().trim();
         String position = positionField.getText().trim();
-        String linkedin = linkedinField != null ? linkedinField.getText().trim() : "";
+
         String user     = regUsernameField.getText().trim();
         String pass     = regPasswordField.getText().trim();
 
@@ -64,7 +64,7 @@ public class RegisterController {
         }
 
         FileHandler.saveAlumni(user + "|" + pass + "|" + name + "|" + email + "|" +
-                year + "|" + major + "|" + company + "|" + position + "|" + linkedin);
+                year + "|" + major + "|" + company + "|" + position );
         showAlert(Alert.AlertType.INFORMATION, "Registered!", "Alumni account created for " + name + ".");
         clearAlumniFields();
     }
@@ -88,7 +88,7 @@ public class RegisterController {
         alumniNameField.clear(); alumniEmailField.clear(); yearField.clear();
         majorField.clear(); companyField.clear(); positionField.clear();
         regUsernameField.clear(); regPasswordField.clear();
-        if (linkedinField != null) linkedinField.clear();
+
     }
 
     private void showAlert(Alert.AlertType type, String title, String msg) {
