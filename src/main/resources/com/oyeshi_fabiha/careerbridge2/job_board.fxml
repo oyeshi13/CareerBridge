@@ -22,7 +22,7 @@
                                 <Label text="DataCorp Inc. • Remote • $70k - $90k" style="-fx-text-fill: #7F8C8D;" />
                             </children>
                         </VBox>
-                        <Button style="-fx-background-color: #27AE60; -fx-text-fill: white; -fx-background-radius: 20;" text="Apply Now" onAction=""/>
+                        <Button style="-fx-background-color: #27AE60; -fx-text-fill: white; -fx-background-radius: 20;" text="Apply Now"/>
                     </children>
                 </HBox>
 

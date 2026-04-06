@@ -13,7 +13,7 @@ public class FileHandler {
     private static final String JOBS_FILE     = "jobs.txt";
     private static final String MESSAGES_FILE = "messages.txt";
 
-    // ─── STUDENT ────────────────────────────────────────────────────────────────
+    //STUDENT
 
     public static void saveStudent(String data) {
         appendLine(STUDENT_FILE, data);
@@ -37,7 +37,7 @@ public class FileHandler {
         return "Student";
     }
 
-    // ─── ALUMNI ─────────────────────────────────────────────────────────────────
+    //ALUMNI
 
     public static void saveAlumni(String data) {
         appendLine(ALUMNI_FILE, data);
@@ -95,7 +95,7 @@ public class FileHandler {
         return results;
     }
 
-    // ─── STORIES ────────────────────────────────────────────────────────────────
+    //STORIES
 
     public static void saveStory(String authorName, String storyText) {
         appendLine(STORIES_FILE, authorName + "§" + storyText);
@@ -111,7 +111,7 @@ public class FileHandler {
         return list;
     }
 
-    // ─── JOBS ───────────────────────────────────────────────────────────────────
+    //JOBS
 
     public static void saveJob(String data) {
         appendLine(JOBS_FILE, data);
@@ -147,8 +147,8 @@ public class FileHandler {
         return results;
     }
 
-    // ─── MESSAGES ───────────────────────────────────────────────────────────────
-    // Format: sender§receiver§timestamp§message
+    //MESSAGES
+
 
     public static void saveMessage(String sender, String receiver, String message) {
         String timestamp = java.time.LocalDateTime.now()
@@ -194,7 +194,7 @@ public class FileHandler {
         return contacts;
     }
 
-    // ─── UTIL ───────────────────────────────────────────────────────────────────
+    //UTIL
 
     private static void appendLine(String filename, String data) {
         try (BufferedWriter w = new BufferedWriter(new FileWriter(filename, true))) {
@@ -220,7 +220,7 @@ public class FileHandler {
         return lines;
     }
 
-    // ─── DATA MODELS ────────────────────────────────────────────────────────────
+    //DATA MODELS
 
     public static class Alumni {
         public String username, name, email, year, major, company, position;
