@@ -25,5 +25,5 @@ Please follow these instructions to set up and execute the project on your local
 
 You can also view the source code and version history of this project on its Git repository.
 
-Repository Link: 
+Repository Link:
 https://github.com/oyeshi13/CareerBridge.git
